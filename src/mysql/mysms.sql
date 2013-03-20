@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 03 月 20 日 14:44
+-- 生成日期: 2013 年 03 月 20 日 14:52
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `matchtable` (
   `ask` text NOT NULL,
   `ans` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `matchtable`

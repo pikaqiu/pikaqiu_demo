@@ -20,7 +20,7 @@ func TestMysql() {
 }
 
 func GetAns(ask string) string {
-	db, err := sql.Open("mysql", "root:@/mysms?charset=gb2312")
+	db, err := sql.Open("mysql", "root:@/mysms?charset=utf8")
 	checkErr(err)
 
 	//查询数据库
@@ -34,6 +34,7 @@ func GetAns(ask string) string {
 		var ansTemp string
 		err = rows.Scan(&ansTemp)
 		ans = ansTemp
+		//fmt.Println(ansTemp)
 	}
 
 	//return sql
