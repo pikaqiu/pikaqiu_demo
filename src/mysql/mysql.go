@@ -24,8 +24,9 @@ func GetAns(ask string) string {
 	checkErr(err)
 
 	//查询数据库
-	sql := "select * from matchtable where ask = "
+	sql := "select ans from matchtable where ask = "
 	sql += "'" + ask + "'"
+	fmt.Println(sql)
 	rows, err := db.Query(sql)
 	checkErr(err)
 
