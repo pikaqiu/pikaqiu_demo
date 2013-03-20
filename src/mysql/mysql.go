@@ -19,6 +19,27 @@ func TestMysql() {
 	checkErr(err)
 }
 
+func GetAns(ask string) string {
+	db, err := sql.Open("mysql", "root:@/mysms?charset=gb2312")
+	checkErr(err)
+
+	//查询数据库
+	sql := "select * from matchtable where ask = "
+	sql += "'" + ask + "'"
+	rows, err := db.Query(sql)
+	checkErr(err)
+
+	var ans string
+	for rows.Next() {
+		var ansTemp string
+		err = rows.Scan(&ansTemp)
+		ans = ansTemp
+	}
+
+	//return sql
+	return ans
+}
+
 func checkErr(err error) {
 	if err != nil {
 		panic(err)
