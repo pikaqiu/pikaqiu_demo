@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 03 月 20 日 14:52
+-- 生成日期: 2013 年 06 月 15 日 15:54
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `mysms`
 --
+CREATE DATABASE `mysms` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `mysms`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `matchtable` (
 
 INSERT INTO `matchtable` (`ask`, `ans`) VALUES
 ('你是谁', '你问我吗？pikaqiu。。。'),
-('mc', 'minecraft?');
+('mc', 'minecraft?测试');
 
 -- --------------------------------------------------------
 
@@ -47,9 +49,9 @@ INSERT INTO `matchtable` (`ask`, `ans`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(5) NOT NULL,
-  `name` varchar(10) NOT NULL,
-  `password` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `name` varchar(10) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(10) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `user`
