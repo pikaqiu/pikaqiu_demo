@@ -17,15 +17,16 @@ func main() {
 	running := true
 	reader := bufio.NewReader(os.Stdin)
 	for running {
+		fmt.Print("输入：")
 		data, _, _ := reader.ReadLine()
 		question := string(data)
 		switch question {
 		case "stop":
 			running = false
 		case "logic":
-			fmt.Println("currentLogic is", currentLogic)
+			fmt.Println("输出：currentLogic is", currentLogic)
 		default:
-			fmt.Println(mysql.GetAns(question))
+			fmt.Println("输出：" + mysql.GetAns(question))
 		}
 	}
 

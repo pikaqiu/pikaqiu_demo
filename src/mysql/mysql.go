@@ -24,9 +24,9 @@ func GetAns(ask string) string {
 	checkErr(err)
 
 	//查询数据库
-	sql := "select ans from matchtable where ask = "
-	sql += "'" + ask + "'"
-	fmt.Println(sql)
+	sql := "select ans from matchtable where ask like "
+	sql += "'%" + ask + "%'"
+	fmt.Println("测试数据：" + sql)
 	rows, err := db.Query(sql)
 	checkErr(err)
 
@@ -38,6 +38,9 @@ func GetAns(ask string) string {
 		//fmt.Println(ansTemp)
 	}
 
+	if ans == "" {
+		ans = "呵呵"
+	}
 	//return sql
 	return ans
 }
